@@ -13,6 +13,7 @@
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
+		console.log(env);
 		return new Response('Hello World from worker a dude! ' + 1323);
 	},
 } satisfies ExportedHandler<Env>;

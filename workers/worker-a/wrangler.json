@@ -11,6 +11,10 @@
 		"staging": {
 			"name": "worker-a-staging",
 			"workers_dev": true
+		},
+		"production": {
+			"name": "worker-a",
+			"workers_dev": false
 		}
 	}
 }
