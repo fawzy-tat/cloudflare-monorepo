@@ -10,18 +10,25 @@
 	"env": {
 		"staging": {
 			"name": "worker-b-staging",
-			"workers_dev": true
+			"workers_dev": true,
+			"workflows": [
+				{
+					"name": "notify-workflow",
+					"binding": "NOTIFY_WORKFLOW",
+					"class_name": "NotifyWorkflow"
+				}
+			]
 		},
 		"production": {
 			"name": "worker-b",
-			"workers_dev": false
+			"workers_dev": false,
+			"workflows": [
+				{
+					"name": "notify-workflow",
+					"binding": "NOTIFY_WORKFLOW",
+					"class_name": "NotifyWorkflow"
+				}
+			]
 		}
-	},
-	"workflows": [
-		{
-			"name": "notify-workflow",
-			"binding": "NOTIFY_WORKFLOW",
-			"class_name": "NotifyWorkflow"
-		}
-	]
+	}
 }
