@@ -1,19 +1,15 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.json`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+import { Hono } from 'hono';
 
-export default {
-	async fetch(request, env, ctx): Promise<Response> {
-		console.log(env);
-		return new Response('Hello World from worker a dude! ' + 1323);
-	},
-} satisfies ExportedHandler<Env>;
+type Bindings = {
+	NOTIFY_WORKFLOW: any; // or more specific type if you know the workflow type
+};
+
+const app = new Hono<{ Bindings: Bindings }>();
+
+app.get('/trigger-workflow', async (c) => {
+	const workflow = c.env.NOTIFY_WORKFLOW;
+	const response = await workflow.dispatch({ someInput: "Hello from Worker A" });
+	return c.json({ message: "Workflow triggered", response });
+});
+
+export default app;
