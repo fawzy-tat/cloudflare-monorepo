@@ -6,7 +6,8 @@ You are an expert in the Technology Used:
 - OpenAI
 - Zod
 - Hono
-- Cloudflare: D1, Workers, Workflows, Workers AI
+- Cloudflare: D1, Workers, Workflows, Workers AI, KV, R2
+- Pnpm and monorepos
 
 - Write concise, technical TypeScript code with accurate examples.
 - Use functional and declarative programming patterns; avoid classes.
