@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { NotifyWorkflow } from '../../../workflows/notify-workflow/src';
+// import { NotifyWorkflow } from '../../../workflows/notify-workflow/src';
 import { users } from '@shared/db-schema'
 import { drizzle } from 'drizzle-orm/d1';
 
@@ -33,4 +33,4 @@ export default {
 	fetch: app.fetch,
 };
 
-export { NotifyWorkflow };
+// export { NotifyWorkflow };
