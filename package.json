@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "@cloudflare/workers-types": "^4.20250204.0",
+    "dotenv": "^16.4.7",
+    "drizzle-kit": "^0.30.4",
     "drizzle-orm": "^0.39.2"
   },
   "devDependencies": {
+    "@types/node": "^22.13.1",
     "esbuild": "0.21.4"
   },
   "pnpm": {
