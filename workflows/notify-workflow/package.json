@@ -3,8 +3,8 @@
 	"version": "0.0.1",
 	"scripts": {
 		"build": "mkdir -p dist && esbuild src/index.ts --bundle --outfile=dist/index.js --external:cloudflare:workers --format=esm --keep-names --tree-shaking=false --packages=external",
-		"deploy": "wrangler deploy --minify dist/index.js",
-		"deploy:staging": "wrangler deploy --minify dist/index.js --env staging",
+		"deploy": "wrangler deploy dist/index.js",
+		"deploy:staging": "wrangler deploy dist/index.js --env staging",
 		"start": "wrangler dev"
 	},
 	"dependencies": {

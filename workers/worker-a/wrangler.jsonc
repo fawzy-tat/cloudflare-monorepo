@@ -3,6 +3,7 @@
 	"name": "worker-a",
 	"main": "dist/index.js",
 	"compatibility_date": "2025-01-21",
+	"minify": false,
 	"observability": {
 		"enabled": true,
 		"head_sampling_rate": 1
