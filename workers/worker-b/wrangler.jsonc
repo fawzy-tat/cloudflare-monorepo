@@ -51,6 +51,14 @@
 					"binding": "NOTIFY_WORKFLOW",
 					"class_name": "NotifyWorkflow"
 				}
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "monorepo-db",
+					"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
+					"migrations_dir": "migrations"
+				}
 			]
 		}
 	}

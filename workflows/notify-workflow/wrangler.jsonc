@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "notify-workflow",
-	"main": "src/index.ts",
+	"main": "dist/index.js",
 	"compatibility_date": "2024-10-22",
 	"observability": {
 		"enabled": true,
@@ -23,6 +23,17 @@
 					"binding": "DB",
 					"database_name": "monorepo-db-staging",
 					"database_id": "f1a45f12-45bb-4fb5-98e6-a2a068023351",
+					"migrations_dir": "migrations"
+				}
+			]
+		},
+		"production": {
+			"name": "notify-workflow-production",
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "monorepo-db",
+					"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
 					"migrations_dir": "migrations"
 				}
 			]
