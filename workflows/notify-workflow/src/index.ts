@@ -52,4 +52,3 @@ export class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
 		await step.sleep('wait on something', '1 minute');
 	}
 }
-export default { NotifyWorkflow };
