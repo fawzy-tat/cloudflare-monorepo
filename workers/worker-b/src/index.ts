@@ -1,10 +1,19 @@
 import { Hono } from 'hono';
 import { NotifyWorkflow } from '../../../workflows/notify-workflow/src';
-
+import { users } from '@shared/db-schema';
+import { drizzle } from 'drizzle-orm/d1';
 
 const app = new Hono<{ Bindings: Env }>();
 
 app.get('/trigger-workflow-2', async (c) => {
+
+
+	// Test Connect to D1
+	const db = drizzle(c.env.DB);
+	const result = await db.select().from(users);
+	console.log(result);
+
+
 	// Define workflow parameters
 	const params = {
 		email: "user@example.com",

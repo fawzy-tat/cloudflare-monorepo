@@ -2,8 +2,13 @@
 	"name": "workflows-starter",
 	"version": "0.0.1",
 	"scripts": {
-		"deploy": "wrangler deploy",
+		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js",
+		"deploy": "wrangler deploy --minify dist/index.js",
+		"deploy:staging": "wrangler deploy --minify dist/index.js --env staging",
 		"start": "wrangler dev"
+	},
+	"dependencies": {
+		"@shared/db-schema": "workspace:*"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250204.0",
@@ -13,10 +18,5 @@
 	"packageManager": "pnpm@9.1.4",
 	"engines": {
 		"pnpm": "^9.1.4"
-	},
-	"pnpm": {
-		"overrides": {
-			"esbuild": "0.21.4"
-		}
 	}
 }

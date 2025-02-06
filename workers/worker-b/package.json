@@ -3,8 +3,9 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"deploy": "wrangler deploy --minify src/index.ts",
-		"deploy:staging": "wrangler deploy --minify src/index.ts --env staging",
+		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js",
+		"deploy": "wrangler deploy --minify dist/index.js",
+		"deploy:staging": "wrangler deploy --minify dist/index.js --env staging",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
 		"test": "vitest",

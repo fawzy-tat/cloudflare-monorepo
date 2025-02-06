@@ -1,9 +1,12 @@
 // <docs-tag name="full-workflow-example">
 import { WorkflowEntrypoint, WorkflowStep, WorkflowEvent } from 'cloudflare:workers';
+import { drizzle } from 'drizzle-orm/d1';
+import { users } from '@shared/db-schema';
 
 type Env = {
 	// Add your bindings here, e.g. Workers KV, D1, Workers AI, etc.
 	NOTIFY_WORKFLOW: Workflow;
+	DB: D1Database;
 };
 
 // User-defined params passed to your workflow
@@ -19,6 +22,10 @@ export class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
 		// Can access params on `event.payload`
 
 		console.log('NotifyWorkflow run', event);
+
+		const db = drizzle(this.env.DB);
+		const result = await db.select().from(users);
+		console.log('result', result);
 
 		const files = await step.do('my first step', async () => {
 			// Fetch a list of files from $SOME_SERVICE
