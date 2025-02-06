@@ -2,7 +2,7 @@
 	"name": "workflows-starter",
 	"version": "0.0.1",
 	"scripts": {
-		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js",
+		"build": "esbuild src/index.ts --bundle --outfile=dist/index.js --external:cloudflare:workers",
 		"deploy": "wrangler deploy --minify dist/index.js",
 		"deploy:staging": "wrangler deploy --minify dist/index.js --env staging",
 		"start": "wrangler dev"
