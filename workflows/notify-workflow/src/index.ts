@@ -16,7 +16,7 @@ type Params = {
 };
 
 // <docs-tag name="workflow-entrypoint">
-export class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
+class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
 	async run(event: WorkflowEvent<Params>, step: WorkflowStep) {
 		// Can access bindings on `this.env`
 		// Can access params on `event.payload`
@@ -52,3 +52,9 @@ export class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
 		await step.sleep('wait on something', '1 minute');
 	}
 }
+
+// ✅ Ensure a named export
+export { NotifyWorkflow };
+
+// ✅ Add a default export with the workflow instance
+export default { NotifyWorkflow };
