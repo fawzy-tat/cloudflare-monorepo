@@ -15,6 +15,13 @@
 			"migrations_dir": "migrations"
 		}
 	],
+	"workflows": [
+		{
+			"name": "notify-workflow",
+			"binding": "NOTIFY_WORKFLOW",
+			"class_name": "NotifyWorkflow"
+		}
+	],
 	"env": {
 		"staging": {
 			"name": "notify-workflow-staging",
@@ -24,6 +31,13 @@
 					"database_name": "monorepo-db-staging",
 					"database_id": "f1a45f12-45bb-4fb5-98e6-a2a068023351",
 					"migrations_dir": "migrations"
+				}
+			],
+			"workflows": [
+				{
+					"name": "notify-workflow",
+					"binding": "NOTIFY_WORKFLOW",
+					"class_name": "NotifyWorkflow"
 				}
 			]
 		},
@@ -35,6 +49,13 @@
 					"database_name": "monorepo-db",
 					"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
 					"migrations_dir": "migrations"
+				}
+			],
+			"workflows": [
+				{
+					"name": "notify-workflow",
+					"binding": "NOTIFY_WORKFLOW",
+					"class_name": "NotifyWorkflow"
 				}
 			]
 		}
