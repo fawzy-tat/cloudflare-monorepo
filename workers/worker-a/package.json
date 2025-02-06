@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"build": "mkdir -p dist && esbuild src/index.ts --bundle --outfile=dist/index.js --external:cloudflare:workers --format=esm --keep-names --tree-shaking=false --minify-syntax=false --target=esnext",
+		"build": "mkdir -p dist && esbuild src/index.ts --bundle --outfile=dist/index.js --external:cloudflare:workers --format=esm --keep-names --tree-shaking=false --minify-syntax=false ",
 		"deploy": "wrangler deploy dist/index.js",
 		"deploy:staging": "wrangler deploy dist/index.js --env staging",
 		"dev": "wrangler dev",
