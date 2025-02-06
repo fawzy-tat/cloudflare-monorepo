@@ -53,8 +53,8 @@ class NotifyWorkflow extends WorkflowEntrypoint<Env, Params> {
 	}
 }
 
-// ✅ Ensure a named export
+// // ✅ Ensure a named export
 export { NotifyWorkflow };
 
-// ✅ Add a default export with the workflow instance
-export default { NotifyWorkflow };
+// // ✅ Add a default export with the workflow instance
+// export default { NotifyWorkflow };
