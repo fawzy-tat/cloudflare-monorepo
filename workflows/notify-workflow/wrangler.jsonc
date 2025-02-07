@@ -1,64 +1,64 @@
-{
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "notify-workflow",
-	"main": "dist/index.js",
-	"compatibility_date": "2024-10-22",
-	"minify": false,
-	"observability": {
-		"enabled": true,
-		"head_sampling_rate": 1
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "monorepo-db",
-			"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
-			"migrations_dir": "migrations"
-		}
-	],
-	"workflows": [
-		{
-			"name": "notify-workflow",
-			"binding": "NOTIFY_WORKFLOW",
-			"class_name": "NotifyWorkflow"
-		}
-	],
-	"env": {
-		"staging": {
-			"name": "notify-workflow-staging",
-			"d1_databases": [
-				{
-					"binding": "DB",
-					"database_name": "monorepo-db-staging",
-					"database_id": "f1a45f12-45bb-4fb5-98e6-a2a068023351",
-					"migrations_dir": "migrations"
-				}
-			],
-			"workflows": [
-				{
-					"name": "notify-workflow",
-					"binding": "NOTIFY_WORKFLOW",
-					"class_name": "NotifyWorkflow"
-				}
-			]
-		},
-		"production": {
-			"name": "notify-workflow-production",
-			"d1_databases": [
-				{
-					"binding": "DB",
-					"database_name": "monorepo-db",
-					"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
-					"migrations_dir": "migrations"
-				}
-			],
-			"workflows": [
-				{
-					"name": "notify-workflow",
-					"binding": "NOTIFY_WORKFLOW",
-					"class_name": "NotifyWorkflow"
-				}
-			]
-		}
-	}
-}
+// {
+// 	"$schema": "node_modules/wrangler/config-schema.json",
+// 	"name": "notify-workflow",
+// 	"main": "dist/index.js",
+// 	"compatibility_date": "2024-10-22",
+// 	"minify": false,
+// 	"observability": {
+// 		"enabled": true,
+// 		"head_sampling_rate": 1
+// 	},
+// 	"d1_databases": [
+// 		{
+// 			"binding": "DB",
+// 			"database_name": "monorepo-db",
+// 			"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
+// 			"migrations_dir": "migrations"
+// 		}
+// 	],
+// 	"workflows": [
+// 		{
+// 			"name": "notify-workflow",
+// 			"binding": "NOTIFY_WORKFLOW",
+// 			"class_name": "NotifyWorkflow"
+// 		}
+// 	],
+// 	"env": {
+// 		"staging": {
+// 			"name": "notify-workflow-staging",
+// 			"d1_databases": [
+// 				{
+// 					"binding": "DB",
+// 					"database_name": "monorepo-db-staging",
+// 					"database_id": "f1a45f12-45bb-4fb5-98e6-a2a068023351",
+// 					"migrations_dir": "migrations"
+// 				}
+// 			],
+// 			"workflows": [
+// 				{
+// 					"name": "notify-workflow",
+// 					"binding": "NOTIFY_WORKFLOW",
+// 					"class_name": "NotifyWorkflow"
+// 				}
+// 			]
+// 		},
+// 		"production": {
+// 			"name": "notify-workflow-production",
+// 			"d1_databases": [
+// 				{
+// 					"binding": "DB",
+// 					"database_name": "monorepo-db",
+// 					"database_id": "701b96bc-cc4c-4778-99d6-37f3c5582e37",
+// 					"migrations_dir": "migrations"
+// 				}
+// 			],
+// 			"workflows": [
+// 				{
+// 					"name": "notify-workflow",
+// 					"binding": "NOTIFY_WORKFLOW",
+// 					"class_name": "NotifyWorkflow"
+// 				}
+// 			]
+// 		}
+// 	}
+// }
